@@ -1,7 +1,16 @@
 <div class="card">
   <div class="card-body">
     <h6 class="text-center">Lista de contactos</h6>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover table-bordered">
+      <thead class=" bg-info">
+        <tr >
+          <th>Nombre</th>
+          <th>Numero Movil</th>
+          <th>Numero de Casa</th>
+
+          <th>Opciones</th>
+        </tr>
+      </thead>
       <tbody>
         <tr *ngFor="let contacto of listaContactos">
           <td>{{contacto.nombre}}</td>
@@ -10,7 +19,7 @@
           <td>
             <a class="btn btn-secondary text-white" (click)="onEdit(contacto)">
             <i class="fas fa-edit"></i>
-            </a>
+            </a><span></span>
             <a class="btn btn-danger text-whit" (click)="onDelete(contacto.$key)">
               <i class="fas fa-trash-alt" ></i>
             </a>
