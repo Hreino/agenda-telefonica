@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyAJRruikmvQ3vVS9ke30SVzum_NzoLBDXE',
-    authDomain: 'project-3092927880338031311.firebaseapp.com',
-    databaseURL: 'https://project-3092927880338031311.firebaseio.com',
-    projectId: 'project-3092927880338031311',
-    storageBucket: 'project-3092927880338031311.appspot.com',
-    messagingSenderId: '273509517288'
+    apiKey: 'AIzaSyD7-xnulQxkbxs-2mR8iq_RjegLsxqGWGY',
+    authDomain: 'agenda-telefonico.firebaseapp.com',
+    databaseURL: 'https://agenda-telefonico.firebaseio.com',
+    projectId: 'agenda-telefonico',
+    storageBucket: 'agenda-telefonico.appspot.com',
+    messagingSenderId: '10889725422'
   }
 };
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ContactoService } from '../../../servicios/contacto.service';
 import { Contacto } from '../../../modelos/contacto';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-lista-contactos',
@@ -12,7 +13,9 @@ export class ListaContactosComponent implements OnInit {
 
   listaContactos: Contacto[];
 
-  constructor( private contactoService: ContactoService) { }
+  constructor(
+    private contactoService: ContactoService,
+    private toastr: ToastrService) { }
 
   ngOnInit( ) {
     this.contactoService.obtenerContactos()
@@ -32,7 +35,11 @@ export class ListaContactosComponent implements OnInit {
   }
 
   onDelete($key: string) {
-    this.contactoService.eliminarContacto($key);
+    if (confirm('Seguro que desea eliminarlo')) {
+      this.contactoService.eliminarContacto($key);
+      this.toastr.error('El contacto ha sido eliminado de Firebase', 'Contacto ELiminado');
+    }
+
   }
 
 }

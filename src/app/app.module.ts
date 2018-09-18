@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms';
 
+// Toastr
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 // configurando firebase
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -31,7 +35,9 @@ import { ContactoService } from './servicios/contacto.service';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [
     ContactoService

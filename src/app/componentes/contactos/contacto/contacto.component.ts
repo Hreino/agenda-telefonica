@@ -4,6 +4,8 @@ import { ContactoService } from '../../../servicios/contacto.service';
 import { NgForm } from '@angular/forms';
 import { Contacto } from '../../../modelos/contacto';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
@@ -11,7 +13,10 @@ import { Contacto } from '../../../modelos/contacto';
 })
 export class ContactoComponent implements OnInit {
 
-  constructor( public contactoService: ContactoService) { }
+  constructor(
+    private contactoService: ContactoService,
+    private toastrService: ToastrService
+    ) { }
 
   ngOnInit() {
 
@@ -23,10 +28,14 @@ export class ContactoComponent implements OnInit {
   onSubmit(contactoForm: NgForm) {
     if (contactoForm.value.$key == null) {
       this.contactoService.insertarContacto(contactoForm.value);
+      this.toastrService.info('Contacto Agregado', 'Operacion Exitosa' );
+
     } else {
       this.contactoService.actualizarContacto(contactoForm.value);
+      this.toastrService.warning('Contacto Modificado', 'Operacion Exitosa' );
     }
       this.resetForm(contactoForm);
+
   }
   resetForm(contactoForm?: NgForm) {
   if (contactoForm != null) {
