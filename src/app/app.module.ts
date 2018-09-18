@@ -3,14 +3,39 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { FormsModule } from '@angular/forms';
+
+
+// configurando firebase
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+
+// componentes
+import { ContactosComponent } from './componentes/contactos/contactos.component';
+import { ListaContactosComponent } from './componentes/contactos/lista-contactos/lista-contactos.component';
+import { ContactoComponent } from './componentes/contactos/contacto/contacto.component';
+
+
+// servicios
+import { ContactoService } from './servicios/contacto.service';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContactosComponent,
+    ListaContactosComponent,
+    ContactoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    ContactoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

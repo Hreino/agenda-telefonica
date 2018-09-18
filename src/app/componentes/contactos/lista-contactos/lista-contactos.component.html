@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <h6 class="text-center">Lista de contactos</h6>
+    <table class="table table-sm table-hover">
+      <tbody>
+        <tr *ngFor="let contacto of listaContactos">
+          <td>{{contacto.nombre}}</td>
+          <td>{{contacto.casa}}</td>
+          <td>{{contacto.movil}}</td>
+          <td>
+            <a class="btn btn-secondary text-white" (click)="onEdit(contacto)">
+            <i class="fas fa-edit"></i>
+            </a>
+            <a class="btn btn-danger text-whit" (click)="onDelete(contacto.$key)">
+              <i class="fas fa-trash-alt" ></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
