@@ -11,7 +11,7 @@ import { Contacto } from '../modelos/contacto';
 export class ContactoService {
   // lista de contactos que traiga de firebase
   listacontacto: AngularFireList<any>;
-  editar = false;
+
 
   // Contacto Seleccionado
   contactoSeleccionado: Contacto = new Contacto();
@@ -41,7 +41,7 @@ export class ContactoService {
       movil: contacto.movil,
       casa: contacto.casa
     });
-    this.editar = true;
+
   }
 
   eliminarContacto($key: string) {
