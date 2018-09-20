@@ -3,4 +3,5 @@ export class Contacto {
     nombre: string;
     movil: string;
     casa: string;
+    twitter: string;
 }

@@ -1,31 +1,47 @@
-<div class="card">
-  <div class="card-body">
-    <h6 class="text-center">Lista de contactos</h6>
-    <table class="table table-sm table-hover table-bordered">
-      <thead class=" bg-info">
-        <tr >
-          <th>Nombre</th>
-          <th>Numero Movil</th>
-          <th>Numero de Casa</th>
-
-          <th>Opciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let contacto of listaContactos">
-          <td>{{contacto.nombre}}</td>
-          <td>{{contacto.casa}}</td>
-          <td>{{contacto.movil}}</td>
-          <td>
-            <a class="btn btn-secondary text-white" (click)="onEdit(contacto)">
-            <i class="fas fa-edit"></i>
-            </a><span></span>
-            <a class="btn btn-danger text-whit" (click)="onDelete(contacto.$key)">
-              <i class="fas fa-trash-alt" ></i>
-            </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<div class="containter">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-body">
+          <h6 class="text-center">Lista de contactos</h6>
+          <table class="table table-sm table-hover table-bordered">
+            <thead class=" bg-info">
+              <tr >
+                <th>Nombre</th>
+                <th>Numero Movil</th>
+                <th>Numero de Casa</th>
+                <th>Twitter</th>
+      
+                <th>Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let contacto of listaContactos">
+                <td>{{contacto.nombre}}</td>
+                <td>{{contacto.casa}}</td>
+                <td>{{contacto.movil}}</td>
+                <td> 
+                  <a href="http://www.twitter.com/{{contacto.twitter}}" class="btn btn-lg" target="_blank" ><i class="fab fa-twitter-square" title="{{contacto.twitter}}"></i></a> </td>
+                <td class="text-center">
+                  <a class="btn btn-secondary text-white" (click)="onEdit(contacto)">
+                  <i class="fas fa-edit"></i>
+                  </a><span></span>
+                  <a class="btn btn-danger text-whit" (click)="onDelete(contacto.$key)">
+                    <i class="fas fa-trash-alt" ></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!contactoService.editar" class="float-left">
+      <app-contacto></app-contacto>
+    </div>
   </div>
+  
 </div>
+
+
+

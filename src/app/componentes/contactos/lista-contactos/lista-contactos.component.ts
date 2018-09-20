@@ -13,6 +13,7 @@ export class ListaContactosComponent implements OnInit {
 
   listaContactos: Contacto[];
 
+
   constructor(
     private contactoService: ContactoService,
     private toastr: ToastrService) { }

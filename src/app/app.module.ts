@@ -23,13 +23,13 @@ import { ContactoComponent } from './componentes/contactos/contacto/contacto.com
 
 // servicios
 import { ContactoService } from './servicios/contacto.service';
+import { AppRoutingModule, routingComponents } from './/app-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactosComponent,
-    ListaContactosComponent,
-    ContactoComponent
+    routingComponents
   ],
   imports: [
     BrowserModule,
@@ -37,7 +37,9 @@ import { ContactoService } from './servicios/contacto.service';
     AngularFireDatabaseModule,
     FormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+
   ],
   providers: [
     ContactoService

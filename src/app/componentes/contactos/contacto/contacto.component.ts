@@ -14,7 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 export class ContactoComponent implements OnInit {
 
   constructor(
-    private contactoService: ContactoService,
+    public contactoService: ContactoService,
     private toastrService: ToastrService
     ) { }
 
