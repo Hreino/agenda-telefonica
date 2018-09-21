@@ -5,8 +5,8 @@
         <div class="card-body">
           <h3 class="text-center">Lista de Contactos</h3>
           <table class="table table-sm table-hover table-bordered">
-            <thead class=" bg-info">
-              <tr >
+            <thead class=" bg-info text-center">
+              <tr>
                 <th>Nombre</th>
                 <th>Numero Movil</th>
                 <th>Numero de Casa</th>
@@ -15,14 +15,14 @@
                 <th>Opciones</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="text-center">
               <tr *ngFor="let contacto of listaContactos">
                 <td>{{contacto.nombre}}</td>
                 <td>{{contacto.casa}}</td>
                 <td>{{contacto.movil}}</td>
-                <td> 
+                <td > 
                   <a href="http://www.twitter.com/{{contacto.twitter}}" class="btn btn-lg" target="_blank" ><i class="fab fa-twitter-square" title="{{contacto.twitter}}"></i></a> </td>
-                <td class="text-center">
+                <td>
                   <a class="btn btn-secondary text-white" (click)="onEdit(contacto)">
                   <i class="fas fa-edit"></i>
                   </a><span></span>
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div  class="float-left">
+    <div>
       <app-contacto></app-contacto>
     </div>
   </div>

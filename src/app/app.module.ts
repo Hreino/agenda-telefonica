@@ -38,7 +38,7 @@ import { AppRoutingModule, routingComponents } from './/app-routing.module';
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    AppRoutingModule,
+    AppRoutingModule
 
   ],
   providers: [
