@@ -13,7 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 // configurando firebase
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 
 // componentes
 import { ContactosComponent } from './componentes/contactos/contactos.component';
